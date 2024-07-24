@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens.CommonComp
+package com.example.todoapp.Screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.layout.Arrangement
@@ -16,8 +16,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.LogInScreen
-import com.example.todoapp.Screens.Pass
+import com.example.todoapp.Screens.CommonComp.ContinueWith
+import com.example.todoapp.Screens.CommonComp.DepthButtton
+import com.example.todoapp.Screens.CommonComp.LabelAndField
+import com.example.todoapp.Screens.CommonComp.OR
 
 @Composable
 fun SignUpScreen(){
@@ -27,19 +29,21 @@ fun SignUpScreen(){
         verticalArrangement = Arrangement.Top
     ) {
         Text(
-            text = "Log in into To-Do",
+            text = "Sign up into To-Do",
             fontWeight = FontWeight(600),
-            fontSize = 32.sp
+            fontSize = 32.sp,
+            letterSpacing = 1.1.sp
+
         )
         Column(
             modifier = Modifier
                 .padding(vertical = 38.dp)
-                .fillMaxHeight(0.38f),
+                .fillMaxHeight(0.43f),
             verticalArrangement = Arrangement.SpaceBetween
         ){
-            LabelAndField(text = "Email")
-            LabelAndField(text = "Password")
-            LabelAndField(text = "Confirm Password")
+            LabelAndField(text = "Email","Password is wrong")
+            LabelAndField(text = "Password","Password is wrong")
+            LabelAndField(text = "Confirm Password","Password is wrong")
         }
         Column(
             modifier = Modifier.fillMaxHeight(0.4f),

@@ -35,16 +35,23 @@ fun LogInScreen(){
         Text(
             text = "Log in into To-Do",
             fontWeight = FontWeight(600),
-            fontSize = 32.sp
+            fontSize = 32.sp,
+            letterSpacing = 1.1.sp
         )
         Column(
             modifier = Modifier
                 .padding(vertical = 38.dp)
-                .fillMaxHeight(0.28f),
+                .fillMaxHeight(0.31f),
             verticalArrangement = Arrangement.SpaceBetween
         ){
-            LabelAndField(text = "Email")
-            Pass()
+            LabelAndField(text = "Email","Password is wrong")
+            LabelAndField(text = "Password","Password is wrong", extra = {
+                Text(
+                    text = "forget password?",
+                    fontWeight = FontWeight(500),
+                    modifier = Modifier.padding(top = 9.dp),
+                )
+            })
         }
         Column(
             modifier = Modifier.fillMaxHeight(0.32f),
@@ -64,26 +71,7 @@ fun LogInScreen(){
     }
 }
 
-@Composable
-fun Pass(){
-    ConstraintLayout {
-        val (forgetPass,pass) = createRefs()
-        LabelAndField(
-            text = "Password",
-            modifier = Modifier.constrainAs(pass){
-            }
-        )
-        Text(
-            text = "forget password?",
-            fontWeight = FontWeight(500),
-            modifier = Modifier.constrainAs(forgetPass){
-                top.linkTo(pass.bottom,8.dp)
-                end.linkTo(pass.end)
-            }
-        )
 
-    }
-}
 
 @Preview(
     name = "Light Mode",

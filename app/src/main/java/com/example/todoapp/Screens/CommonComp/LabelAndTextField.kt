@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -28,7 +30,7 @@ fun LabelAndField(
     extra : @Composable () -> Unit = {},
     modifier: Modifier = Modifier
 ){
-    Column(modifier) {
+    Column(modifier.padding(top = 2.dp)) {
         Text(
             text = text,
             fontSize = 14.sp,
@@ -43,14 +45,20 @@ fun LabelAndField(
                 .height(42.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 unfocusedBorderColor = Color.Black
-            )
+            ),
+            shape = RoundedCornerShape(8.dp)
         )
         Row(
-            Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            Modifier.fillMaxWidth().padding(start = 8.dp, top = 2.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+
             ) {
             Text(
-                text = err
+                text = err,
+                fontSize = 12.sp,
+                fontWeight = FontWeight(500),
+                color = Color.Red,
+                letterSpacing = 1.1.sp
             )
             extra()
         }
@@ -63,7 +71,7 @@ fun LATPrev(){
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
-        LabelAndField(text = "Email")
+        LabelAndField(text = "Email","error")
     }
 
 }
