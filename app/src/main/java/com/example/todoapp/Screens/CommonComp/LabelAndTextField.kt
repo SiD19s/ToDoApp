@@ -22,7 +22,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun LabelAndField(text : String,modifier: Modifier = Modifier){
+fun LabelAndField(
+    text : String,
+    err : String = "",
+    extra : @Composable () -> Unit = {},
+    modifier: Modifier = Modifier
+){
     Column(modifier) {
         Text(
             text = text,
@@ -33,11 +38,22 @@ fun LabelAndField(text : String,modifier: Modifier = Modifier){
         OutlinedTextField(
             value = "",
             onValueChange = { },
-            modifier = Modifier.fillMaxWidth().height(42.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(42.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 unfocusedBorderColor = Color.Black
             )
         )
+        Row(
+            Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+            Text(
+                text = err
+            )
+            extra()
+        }
     }
 }
 

@@ -32,5 +32,6 @@
     <color name="light_grey">#F1F2F8</color>
     <color name="grey">#BEBEBE</color>
     <color name="mid_grey">#9C9C9C</color>
+    <color name="dark_grey">#666666</color>
 
 </resources>
