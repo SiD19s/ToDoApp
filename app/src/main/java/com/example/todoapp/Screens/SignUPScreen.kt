@@ -16,10 +16,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.ContinueWith
-import com.example.todoapp.Screens.CommonComp.DepthButtton
-import com.example.todoapp.Screens.CommonComp.LabelAndField
-import com.example.todoapp.Screens.CommonComp.OR
+import com.example.todoapp.Screens.CommonComp.HomeScreen.ContinueWith
+import com.example.todoapp.Screens.CommonComp.HomeScreen.DepthButtton
+import com.example.todoapp.Screens.CommonComp.HomeScreen.LabelAndField
+import com.example.todoapp.Screens.CommonComp.HomeScreen.OR
 
 @Composable
 fun SignUpScreen(){

@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.DepthButtton
+import com.example.todoapp.Screens.CommonComp.HomeScreen.DepthButtton
 
 @Composable
 fun HomeScreen(){

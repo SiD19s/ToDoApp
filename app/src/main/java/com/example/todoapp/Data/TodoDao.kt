@@ -27,16 +27,16 @@ interface TodoDao {
     @Delete()
     suspend fun deleteItem(item: Item)
 
-    // get all todo
-    @Query("SELECT * FROM todos")
-    suspend fun getAllTodos(): Flow<List<Todo>>
+//    // get all todo
+//    @Query("SELECT * FROM todos")
+//    suspend fun getAllTodos(): Flow<List<Todo>>
 
     //get todo by id
     @Query("SELECT * FROM todos WHERE Id = :id")
     suspend fun getTodoById(id: Int): Todo?
 
-    // get items by todoId
-    @Query("SELECT * FROM items WHERE todoId = :todoId")
-    suspend fun getItemsByTodoId(todoId: Int): Flow<List<Item>>
+//    // get items by todoId
+//    @Query("SELECT * FROM items WHERE todoId = :todoId")
+//    suspend fun getItemsByTodoId(todoId: Int): Flow<List<Item>>
 
 }
