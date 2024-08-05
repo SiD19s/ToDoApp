@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens
+package com.example.todoapp.features_todo.presentation.Screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.layout.Arrangement
@@ -16,43 +16,48 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.HomeScreen.ContinueWith
-import com.example.todoapp.Screens.CommonComp.HomeScreen.DepthButtton
-import com.example.todoapp.Screens.CommonComp.HomeScreen.LabelAndField
-import com.example.todoapp.Screens.CommonComp.HomeScreen.OR
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.ContinueWith
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.DepthButtton
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.LabelAndField
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.OR
+
 
 @Composable
-fun SignUpScreen(){
+fun LogInScreen(){
     Column(modifier = Modifier
         .fillMaxWidth(0.94f)
         .fillMaxHeight(0.85f),
         verticalArrangement = Arrangement.Top
     ) {
         Text(
-            text = "Sign up into To-Do",
+            text = "Log in into To-Do",
             fontWeight = FontWeight(600),
             fontSize = 32.sp,
             letterSpacing = 1.1.sp
-
         )
         Column(
             modifier = Modifier
                 .padding(vertical = 38.dp)
-                .fillMaxHeight(0.43f),
+                .fillMaxHeight(0.31f),
             verticalArrangement = Arrangement.SpaceBetween
         ){
             LabelAndField(text = "Email","Password is wrong")
-            LabelAndField(text = "Password","Password is wrong")
-            LabelAndField(text = "Confirm Password","Password is wrong")
+            LabelAndField(text = "Password","Password is wrong", extra = {
+                Text(
+                    text = "forget password?",
+                    fontWeight = FontWeight(500),
+                    modifier = Modifier.padding(top = 9.dp),
+                )
+            })
         }
         Column(
-            modifier = Modifier.fillMaxHeight(0.4f),
+            modifier = Modifier.fillMaxHeight(0.32f),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            DepthButtton("SIGN UP")
+            DepthButtton()
             OR()
         }
-        Column(modifier = Modifier.padding(top = 32.dp).fillMaxHeight(0.8f),
+        Column(modifier = Modifier.fillMaxHeight(0.6f),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             ContinueWith(icon = R.drawable.google, name ="Continue with Google" )
@@ -63,17 +68,19 @@ fun SignUpScreen(){
     }
 }
 
+
+
 @Preview(
     name = "Light Mode",
     showBackground = true,
     uiMode = UI_MODE_NIGHT_NO
 )
 @Composable
-fun SignUpPreview(){
+fun LogInPreview(){
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally){
-        SignUpScreen()
+        LogInScreen()
     }
 
 }

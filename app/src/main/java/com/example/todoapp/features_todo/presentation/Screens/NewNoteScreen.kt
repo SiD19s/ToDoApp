@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens
+package com.example.todoapp.features_todo.presentation.Screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.Image
@@ -47,8 +47,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.NewtasksLabelAndNotes
-import com.example.todoapp.Screens.CommonComp.PriorityDropdownMenu
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.NewtasksLabelAndNotes
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.PriorityDropdownMenu
 
 @Composable
 fun NewNoteScreen(title:String){

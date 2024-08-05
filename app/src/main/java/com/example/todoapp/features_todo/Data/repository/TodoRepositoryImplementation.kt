@@ -3,12 +3,12 @@ package com.example.todoapp.features_todo.Data.repository
 import com.example.todoapp.features_todo.Domain.model.Item
 import com.example.todoapp.features_todo.Domain.model.Todo
 import com.example.todoapp.features_todo.Data.data_source.TodoDao
-import com.example.todoapp.features_todo.Domain.repository.TodoRepositary
+import com.example.todoapp.features_todo.Domain.repository.TodoRepository
 import kotlinx.coroutines.flow.Flow
 
 class TodoRepositoryImplementation(
     private val dao : TodoDao
-) : TodoRepositary {
+) : TodoRepository {
     override suspend fun insertTodo(todo: Todo) {
         dao.insertTodo(todo)
     }

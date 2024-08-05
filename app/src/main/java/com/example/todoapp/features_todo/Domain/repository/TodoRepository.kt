@@ -4,7 +4,7 @@ import com.example.todoapp.features_todo.Domain.model.Item
 import com.example.todoapp.features_todo.Domain.model.Todo
 import kotlinx.coroutines.flow.Flow
 
-interface TodoRepositary {
+interface TodoRepository {
 
     suspend fun insertTodo(todo: Todo)
 

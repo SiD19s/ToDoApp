@@ -1,4 +1,4 @@
-package com.example.todoapp
+package com.example.todoapp.features_todo.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,8 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.todoapp.Screens.CommonComp.NewtasksLabelAndNotes
-import com.example.todoapp.Screens.CommonComp.NotesTextField
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.NewtasksLabelAndNotes
 import com.example.todoapp.ui.theme.ToDoAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,14 +21,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ToDoAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize(), containerColor = Color.White) { innerPadding ->
-                    val e : Modifier = Modifier.padding(innerPadding)
-                    Column(modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally){
-                        NewtasksLabelAndNotes()
-                    }
-                }
+//                Scaffold(modifier = Modifier.fillMaxSize(), containerColor = Color.White) {
+//                }
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens.CommonComp
+package com.example.todoapp.features_todo.presentation.Screens.CommonComp
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.layout.Arrangement
@@ -29,7 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.NewNoteScreen
+import com.example.todoapp.features_todo.presentation.Screens.NewNoteScreen
 
 @Composable
 fun NewTaskListing(isCompleted:Boolean = false){

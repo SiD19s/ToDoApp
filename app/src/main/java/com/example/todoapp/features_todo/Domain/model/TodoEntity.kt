@@ -9,9 +9,14 @@ data class Todo(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val title: String,
-    val notes:String,
-    val priority: Int,
-)
+    val notes:String?,
+    val timestamp:Long,
+    val priority: String,
+){
+    companion object{
+        val notePriority = listOf("HighPriority","MidPriority","LowPriority")
+    }
+}
 
 @Entity(
     tableName = "items",

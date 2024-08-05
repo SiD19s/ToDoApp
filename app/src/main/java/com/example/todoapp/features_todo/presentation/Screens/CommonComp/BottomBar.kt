@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens.CommonComp
+package com.example.todoapp.features_todo.presentation.Screens.CommonComp
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.layout.Arrangement

@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens
+package com.example.todoapp.features_todo.presentation.Screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.Image
@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.BottomBar
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.BottomBar
 
 @Composable
 fun HomeNewUserScreen(){

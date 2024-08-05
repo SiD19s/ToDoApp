@@ -1,4 +1,4 @@
-package com.example.todoapp.Screens
+package com.example.todoapp.features_todo.presentation.Screens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.BorderStroke
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.todoapp.R
-import com.example.todoapp.Screens.CommonComp.HomeScreen.DepthButtton
+import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.DepthButtton
 
 @Composable
 fun HomeScreen(){
