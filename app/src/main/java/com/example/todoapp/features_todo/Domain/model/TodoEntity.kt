@@ -1,4 +1,4 @@
-package com.example.todoapp.Data
+package com.example.todoapp.features_todo.Domain.model
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
