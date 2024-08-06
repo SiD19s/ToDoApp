@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class GetTodoUsecase(
-    private val repositary: TodoRepository
+    private val repository: TodoRepository
 ) {
 
 
-    suspend operator fun invoke(
+    operator fun invoke(
         todoOrder: TodoOrder = TodoOrder.Priority(OrderType.Descending)
     ) : Flow<List<Todo>> {
-        return repositary.getAllTodos().map {  todos ->
+        return repository.getAllTodos().map { todos ->
             when(todoOrder.orderType){
                 is OrderType.Ascending ->{
                     when(todoOrder){

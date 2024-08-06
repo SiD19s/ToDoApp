@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.todoapp.features_todo.Data.data_source.TodoDatabase
 import com.example.todoapp.features_todo.Data.repository.TodoRepositoryImplementation
 import com.example.todoapp.features_todo.Domain.repository.TodoRepository
+import com.example.todoapp.features_todo.Domain.use_case.AddTodoUsecase
 import com.example.todoapp.features_todo.Domain.use_case.DeleteTodoUsecase
 import com.example.todoapp.features_todo.Domain.use_case.GetTodoUsecase
 import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases
@@ -39,7 +40,8 @@ object AppModule {
     fun provideTodoUsecases(repository: TodoRepository): TodoUsecases{
         return TodoUsecases(
             getTodoUsecase = GetTodoUsecase(repository),
-            deleteTodoUsecase = DeleteTodoUsecase(repository)
+            deleteTodoUsecase = DeleteTodoUsecase(repository),
+            addTodoUsecase = AddTodoUsecase(repository)
         )
     }
 
