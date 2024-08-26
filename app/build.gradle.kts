@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
+    id ("kotlin-kapt")
 
 }
 
@@ -86,6 +86,7 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.44")
     annotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+    implementation(libs.androidx.hilt.navigation.compose)
 
     val room_version = "2.6.1"
 
@@ -95,4 +96,8 @@ dependencies {
 
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose.v100)
 }
+

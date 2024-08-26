@@ -1,39 +1,39 @@
 package com.example.todoapp.features_todo.Data.repository
 
-import com.example.todoapp.features_todo.Domain.model.Item
 import com.example.todoapp.features_todo.Domain.model.Todo
 import com.example.todoapp.features_todo.Data.data_source.TodoDao
+import com.example.todoapp.features_todo.Data.data_source.TodoWithItems
+import com.example.todoapp.features_todo.Domain.model.TodoItem
 import com.example.todoapp.features_todo.Domain.repository.TodoRepository
 import kotlinx.coroutines.flow.Flow
 
 class TodoRepositoryImplementation(
-    private val dao : TodoDao
+    private val todoDao: TodoDao
 ) : TodoRepository {
-    override suspend fun insertTodo(todo: Todo) {
-        dao.insertTodo(todo)
+
+    override fun getAllTodosWithItems(): Flow<List<TodoWithItems>> {
+        return todoDao.getAllTodosWithItems()
     }
 
-    override suspend fun insertItem(item: Item) {
-        dao.insertItem(item)
+    override suspend fun getTodoWithItems(todoId: Long): TodoWithItems? {
+        return todoDao.getTodoWithItems(todoId)
     }
 
-    override suspend fun deleteTodo(todo: Todo) {
-        dao.deleteTodo(todo)
+    override suspend fun insertTodoAndItems(todo: Todo, items: List<TodoItem>) {
+        todoDao.insertTodoAndItems(todo, items)
     }
 
-    override suspend fun deleteItem(item: Item) {
-        dao.deleteItem(item)
+    override suspend fun deleteTodoAndItems(todo: Todo) {
+        todoDao.deleteTodoAndItems(todo)
     }
 
-    override fun getAllTodos(): Flow<List<Todo>> {
-        return dao.getAllTodos()
+    override suspend fun insertTodoItem(todoItem: TodoItem) {
+        todoDao.insertTodoItem(todoItem)
     }
 
-    override suspend fun getTodoById(id: Int): Todo? {
-        return dao.getTodoById(id)
+    override suspend fun deleteTodoItem(itemId: Long) {
+        todoDao.deleteTodoItem(itemId)
     }
 
-    override fun getItemsByTodoId(todoId: Int): Flow<List<Item>> {
-        TODO("Not yet implemented")
-    }
+
 }

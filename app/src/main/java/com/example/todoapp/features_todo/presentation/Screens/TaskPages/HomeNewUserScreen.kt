@@ -1,4 +1,4 @@
-package com.example.todoapp.features_todo.presentation.Screens
+package com.example.todoapp.features_todo.presentation.Screens.TaskPages
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import androidx.compose.foundation.Image
@@ -8,17 +8,14 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.focusModifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -28,57 +25,54 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.todoapp.R
-import com.example.todoapp.features_todo.presentation.Screens.CommonComp.BottomBar
+import com.example.todoapp.features_todo.presentation.Screens.Utils.BottomBar
+import com.example.todoapp.features_todo.presentation.Screens.Utils.HomeScreen.FloatingAddButton
 
 @Composable
 fun HomeNewUserScreen(){
-    ConstraintLayout(modifier = Modifier
-        .fillMaxWidth()
-        .fillMaxHeight()
-    ) {
-        val (title,subtitle,bottomBar,float) = createRefs()
-        Text(
-            text = "Welcome Eren,",
-            fontSize = 32.sp,
-            fontWeight = FontWeight(700),
-            modifier = Modifier.constrainAs(title){
-                top.linkTo(parent.top,24.dp)
-                start.linkTo(parent.start,20.dp)
-            }
-        )
-
-        PicSubText(
-            modifier = Modifier.constrainAs(subtitle){
-                top.linkTo(parent.top)
-                bottom.linkTo(parent.bottom)
-            }
-        )
-        BottomBar(
-            modifier = Modifier.constrainAs(bottomBar){
-                bottom.linkTo(parent.bottom)
-            }
-        )
-        FloatingActionButton(
-            onClick = { /*TODO*/ },
-            shape = RoundedCornerShape(40.dp),
-            modifier = Modifier.size(65.dp)
-                .constrainAs(float){
-                bottom.linkTo(bottomBar.top,20.dp)
-                end.linkTo(parent.end,20.dp)
-            },
-            containerColor = colorResource(id = R.color.dark_violet)
+    Scaffold(
+        containerColor = colorResource(id = R.color.background_white),
+    modifier = Modifier
+        .fillMaxSize()
+        .navigationBarsPadding()
+    ) { paddingvalues ->
+        ConstraintLayout(modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(paddingvalues)
         ) {
+            val (title,subtitle,bottomBar,float) = createRefs()
             Text(
-                text = "+",
-                color = Color.White,
-                fontSize = 40.sp,
-                fontWeight = FontWeight(400)
+                text = "Welcome Eren,",
+                fontSize = 32.sp,
+                fontWeight = FontWeight(700),
+                modifier = Modifier.constrainAs(title){
+                    top.linkTo(parent.top,10.dp)
+                    start.linkTo(parent.start,20.dp)
+                }
+            )
+
+            PicSubText(
+                modifier = Modifier.constrainAs(subtitle){
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                }
+            )
+            BottomBar(
+                modifier = Modifier.constrainAs(bottomBar){
+                    bottom.linkTo(parent.bottom)
+                }
+            )
+            FloatingAddButton(
+                modifier = Modifier.constrainAs(float){
+                    bottom.linkTo(bottomBar.top,20.dp)
+                    end.linkTo(parent.end,20.dp)
+                }
             )
         }
-
-
     }
 }
+
 
 @Composable
 fun PicSubText(modifier: Modifier = Modifier){

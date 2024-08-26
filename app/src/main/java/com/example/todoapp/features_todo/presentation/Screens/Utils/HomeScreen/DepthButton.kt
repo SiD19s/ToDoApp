@@ -1,4 +1,4 @@
-package com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen
+package com.example.todoapp.features_todo.presentation.Screens.Utils.HomeScreen
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape

@@ -1,22 +1,17 @@
 package com.example.todoapp.features_todo.Domain.repository
 
-import com.example.todoapp.features_todo.Domain.model.Item
+import com.example.todoapp.features_todo.Data.data_source.TodoWithItems
 import com.example.todoapp.features_todo.Domain.model.Todo
+import com.example.todoapp.features_todo.Domain.model.TodoItem
 import kotlinx.coroutines.flow.Flow
 
 interface TodoRepository {
 
-    suspend fun insertTodo(todo: Todo)
+    fun getAllTodosWithItems(): Flow<List<TodoWithItems>>
+    suspend fun getTodoWithItems(todoId: Long): TodoWithItems?
+    suspend fun insertTodoAndItems(todo: Todo, items: List<TodoItem>)
+    suspend fun deleteTodoAndItems(todo: Todo)
+    suspend fun insertTodoItem(todoItem: TodoItem)
+    suspend fun deleteTodoItem(itemId: Long)
 
-    suspend fun insertItem(item: Item)
-
-    suspend fun deleteTodo(todo: Todo)
-
-    suspend fun deleteItem(item: Item)
-
-    fun getAllTodos(): Flow<List<Todo>>
-
-    suspend fun getTodoById(id: Int): Todo?
-
-    fun getItemsByTodoId(todoId: Int): Flow<List<Item>>
 }

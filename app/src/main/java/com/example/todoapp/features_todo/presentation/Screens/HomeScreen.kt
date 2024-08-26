@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.todoapp.R
-import com.example.todoapp.features_todo.presentation.Screens.CommonComp.HomeScreen.DepthButtton
+import com.example.todoapp.features_todo.presentation.Screens.Utils.HomeScreen.DepthButtton
 
 @Composable
 fun HomeScreen(){
@@ -51,6 +51,7 @@ fun HomeScreen(){
                modifier = Modifier.fillMaxWidth(),
            ){
                DepthButtton()
+
                Button(
                    onClick = { /*TODO*/ },
                    modifier = Modifier

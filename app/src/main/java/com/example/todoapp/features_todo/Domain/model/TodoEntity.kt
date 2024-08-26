@@ -7,27 +7,29 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "todos")
 data class Todo(
     @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    val id: Long?,
     val title: String,
-    val notes:String?,
-    val timestamp:Long,
-    val priority: String,
+    val description: String?,
+    val timestamp: Long,
+    val priority: Int
 ){
     companion object{
-        val notePriority = listOf("HighPriority","MidPriority","LowPriority")
+        val TodoPriority = listOf(1,2,3)
     }
 }
 
 @Entity(
-    tableName = "items",
+    tableName = "todo_items",
     foreignKeys = [ForeignKey(
         entity = Todo::class,
         parentColumns = ["id"],
-        childColumns = ["todoId"])]
+        childColumns = ["todoId"],
+        onDelete = ForeignKey.CASCADE
+    )]
 )
-data class Item(
-    @PrimaryKey(autoGenerate = true) val id: Int,
-    val todoId: Long, // Foreign key referencing the Todo entity
+data class TodoItem(
+    @PrimaryKey(autoGenerate = true) val itemId: Long? = null,
+    val todoId: Long?,
     val title: String,
     val isChecked: Boolean
 )

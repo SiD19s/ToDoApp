@@ -5,10 +5,13 @@ import androidx.room.Room
 import com.example.todoapp.features_todo.Data.data_source.TodoDatabase
 import com.example.todoapp.features_todo.Data.repository.TodoRepositoryImplementation
 import com.example.todoapp.features_todo.Domain.repository.TodoRepository
-import com.example.todoapp.features_todo.Domain.use_case.AddTodoUsecase
-import com.example.todoapp.features_todo.Domain.use_case.DeleteTodoUsecase
-import com.example.todoapp.features_todo.Domain.use_case.GetTodoUsecase
-import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.DeleteTodoAndItems
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.DeleteTodoItem
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.GetAllTodosWithItems
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.GetTodoWithItems
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.InsertTodoAndItems
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.InsertTodoItem
+import com.example.todoapp.features_todo.Domain.use_case.TodoUsecases.TodoUsecases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,11 +40,15 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideTodoUsecases(repository: TodoRepository): TodoUsecases{
+    fun provideTodoUsecases(repository: TodoRepository): TodoUsecases {
         return TodoUsecases(
-            getTodoUsecase = GetTodoUsecase(repository),
-            deleteTodoUsecase = DeleteTodoUsecase(repository),
-            addTodoUsecase = AddTodoUsecase(repository)
+            getAllTodosWithItems = GetAllTodosWithItems(repository),
+            getTodoWithItems = GetTodoWithItems(repository),
+            insertTodoAndItems = InsertTodoAndItems(repository),
+            deleteTodoAndItems = DeleteTodoAndItems(repository),
+            insertTodoItem = InsertTodoItem(repository),
+            deleteTodoItem = DeleteTodoItem(repository)
+
         )
     }
 
